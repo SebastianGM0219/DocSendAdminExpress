@@ -50,7 +50,7 @@ app.get('/:pdf_id.pdf', async (req, res) => {
     try {
         console.log(pdf_id);
         // const pdfDataResponse = await fetch('https://c920-18-118-218-235.ngrok-free.app/show_all/'+pdf_id, {
-        const pdfDataResponse = await fetch('http://127.0.0.1:5000/show_all/'+pdf_id, {
+        const pdfDataResponse = await fetch('https://c920-18-118-218-235.ngrok-free.app/show_all/'+pdf_id, {
             method: 'POST',
         });
 
