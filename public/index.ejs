@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert URL to PDF</title>
+    <link rel="stylesheet" href="style.css"> <!-- If you have additional styles, include them here -->
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #mainBorder {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            border: none;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .spinner {
+            border: 4px solid rgba(0,0,0,.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s ease infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Include other styles from your original HTML content */
+    </style>
+</head>
+<body>
+    <div id="mainBorder">
+        <h1>DS2PDF</h1>
+        <h2>Convert DocSend links to a PDF</h2>
+        
+        <h2>PDF Collection</h2>
+        <table id="pdf-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Filename</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+             <tbody>
+                <% pdfData.forEach(function(pdf) { %>
+                    <tr>
+                        <td><%= pdf.id %></td>
+                        <td><%= pdf.name + ".pdf" %></td>                        
+                        <td><button onclick="alert('Download functionality not implemented.');">Download</button></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
